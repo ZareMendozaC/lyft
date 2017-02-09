@@ -1,0 +1,16 @@
+
+*{
+	box-sizing: border-box;
+	outline: 1px solid green;
+	background: url(../img/fondo1.jpg) no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-size: cover; 
+	
+}
+body h1{
+	color: white;
+}
+button{
+  
+}
