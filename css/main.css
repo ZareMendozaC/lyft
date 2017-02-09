@@ -1,8 +1,8 @@
 
 *{
 	box-sizing: border-box;
-	outline: 1px solid green;
-
+	
+	background: url(../img/fondo2.jpg) no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
 	background-size: cover; 
@@ -11,17 +11,21 @@
 body h1{
 	color: white;
 }
-button{
-	background-color: red;
-	margin: 0px;
-	padding:0px;
+.botones button{
+	padding: 15px 30px;
+	border: 1px solid white;
+	border-radius: 7px;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 10%;
 }
 
 .botones{
-	position: absolute;
 	bottom: 0px;
-	margin-left: 0px auto;
-	margin-right: 0px auto;
-	left: 0px;
-	right: 0px;
+	position: absolute;
+	bottom: 0 !important;
+	bottom: -1px;
+	width: 100%;
+	text-align: center;
 }
+
