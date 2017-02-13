@@ -1,8 +1,6 @@
-
- function setObjectLocalStorage(key, value) {
+function setObjectLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
-
 function getObjectLocalStorage(key) {
     var value = localStorage.getItem(key);
     return JSON.parse(value);
@@ -52,8 +50,11 @@ function getObjectLocalStorage(key) {
 
     $("#phone-selector").on("countrychange", function(e, countryData) {
         $('#code-dial').html( "+" + countryData.dialCode );
+        setObjectLocalStorage('country',countryData.name);
+        console.log(countryData.name);
         validar();
         //$("#phone-selector").attr('maxlength','');
+
     });
     function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
@@ -66,11 +67,16 @@ function getObjectLocalStorage(key) {
         var codeGenerado= lab+Math.floor(numAle);
         setObjectLocalStorage('tel', document.getElementById("phone-selector").value );
         setObjectLocalStorage('codigo',codeGenerado );
+
         alert("su codigo es: "+codeGenerado);
-        window.location = "country.html";
+        window.location = "datos.html";
     }
       var buttonNext= document.getElementById("next");
     buttonNext.addEventListener('click', next);
 });
 
-
+function regresarIndex(){
+    window.location = "index.html";
+}
+var regresar= document.getElementById("regresar");
+regresar.addEventListener('click',regresarIndex);
