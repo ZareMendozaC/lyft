@@ -51,7 +51,7 @@ function getObjectLocalStorage(key) {
     $("#phone-selector").on("countrychange", function(e, countryData) {
         $('#code-dial').html( "+" + countryData.dialCode );
         setObjectLocalStorage('country',countryData.name);
-        console.log(countryData.name);
+        //console.log(countryData.name);
         validar();
         //$("#phone-selector").attr('maxlength','');
 

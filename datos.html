@@ -35,10 +35,14 @@
                 <div class="form-group text-center">
                     <div class="col-xs-12">
                         <span><i class="fa fa-user-o contacto" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control inputName" id="nombreApe" placeholder="First name    Last name">
+                        <input type="text" class="form-control inputName" id="nombreApe" placeholder="First name    Last name" maxlength="30">
+                        <i id="nombre-valid" class="number-valid fa fa-check" style="display: none"></i>
+                         <i id="nombre-invalid" class="number-valid fa fa-times" style="display: none"></i>
                         <br>
                        <span><i class="fa fa-envelope-o email" aria-hidden="true"></i></span>
                        <input type="email" class="form-control inputName" id="mail" placeholder="Email">
+                        <i id="mail-valid" class="number-valid fa fa-check" style="display: none"></i>
+                         <i id="mail-invalid" class="number-valid fa fa-times" style="display: none"></i>
                        <div class="checkbox">
                             <label>
                             <input type="checkbox" value="">I Agree to Lyft's    Terms of service</label>
