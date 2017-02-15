@@ -57,10 +57,9 @@ function vistaMapa(){
   cadena= borrarEspacios(cadena); // CADENA SIN ESPACIOS
   
   
-  var isvalid= false; 
+  var isvalid= true; 
   if(isAlphabetic(cadena))
   {
-    isvalid= true;
     var nombreApe= document.getElementById("nombreApe").value;
     var misDatos=nombreApe.split(" "); // PARA SACAR LOS DATOS
     var datos="";
@@ -73,12 +72,13 @@ function vistaMapa(){
         datos= datos+" ";
       }
       console.log(datos);
-      setObjectLocalStorage('nombre',datos);
+      
       var nombreValido= document.getElementById("nombre-valid");
       nombreValido.style.display="block";
       var nombreValido= document.getElementById("nombre-invalid");
       nombreValido.style.display="none";
     }
+    setObjectLocalStorage('nombre',datos);
   }
   else
   {
@@ -91,21 +91,20 @@ function vistaMapa(){
   
   if(isEmail(email))
   {
-      isvalid= true;
       var email= document.getElementById("mail-valid");
       email.style.display="block";
       var email= document.getElementById("mail-invalid");
       email.style.display="none";
   }else
   {
-    isvalid=false;
-     var email= document.getElementById("mail-valid");
+      isvalid=false;
+      var email= document.getElementById("mail-valid");
       email.style.display="none";
       var email= document.getElementById("mail-invalid");
       email.style.display="block";
   }
   
-  if (isvalid) {
+  if (isvalid==true) {
     console.log("paso todo");
     window.location= "mapa.html";
   }
