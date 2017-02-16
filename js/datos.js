@@ -12,8 +12,6 @@ function regresarIndex(){
 var regresar= document.getElementById("regresar");
 regresar.addEventListener('click',regresarIndex);
 
-
-
 function isAlphabetic(cadena)
 {
       if (cadena.match(/^[a-zA-Z]+$/))
@@ -52,18 +50,17 @@ function vistaMapa(){
 
   var nombreApe= document.getElementById("nombreApe");
   var email= document.getElementById("mail").value;
-	//window.location= "mapa.html";
   var cadena= nombreApe.value;
+  var check= document.getElementById("check");
   cadena= borrarEspacios(cadena); // CADENA SIN ESPACIOS
-  
-  
-  var isvalid= true; 
+
+
+  var isvalid= true;
   if(isAlphabetic(cadena))
   {
     var nombreApe= document.getElementById("nombreApe").value;
-    var misDatos=nombreApe.split(" "); // PARA SACAR LOS DATOS
+    var misDatos=nombreApe.split(" "); // SACAR LOS DATOS
     var datos="";
-    console.log(misDatos);
     for(var i=0; i<misDatos.length; i++)
     {
       if(misDatos[i]!=" ")
@@ -71,8 +68,7 @@ function vistaMapa(){
         datos= datos+misDatos[i];
         datos= datos+" ";
       }
-      console.log(datos);
-      
+
       var nombreValido= document.getElementById("nombre-valid");
       nombreValido.style.display="block";
       var nombreValido= document.getElementById("nombre-invalid");
@@ -87,8 +83,9 @@ function vistaMapa(){
       nombreValido.style.display="block";
     var nombreValido= document.getElementById("nombre-valid");
       nombreValido.style.display="none";
+      alert("nombre inválido");
   }
-  
+
   if(isEmail(email))
   {
       var email= document.getElementById("mail-valid");
@@ -102,15 +99,25 @@ function vistaMapa(){
       email.style.display="none";
       var email= document.getElementById("mail-invalid");
       email.style.display="block";
+      alert("email inválido");
   }
-  
+if(check.checked){}
+else
+{
+  isvalid=false;
+  alert("Debe aceptar los terminos y condiciones");
+}
   if (isvalid==true) {
-    console.log("paso todo");
-    window.location= "mapa.html";
+    setTimeout(function(){
+      window.location= "mapa.html";
+     }, 2000);
+
   }
   else
-   alert("corrige el formulario");
-  
+  {
+  var next= document.getElementById("next");
+  next.disable= true;
+  }
 }
 var next= document.getElementById("next");
 next.addEventListener('click',vistaMapa);
