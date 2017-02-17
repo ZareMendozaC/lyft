@@ -22,7 +22,8 @@ function centrarMapa(position){
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         map: miMapa,
-        title:"Mi posición"
+        title:"Aqui estoy!!!",
+        icon: "img/persona.png"
     });
 };
 
