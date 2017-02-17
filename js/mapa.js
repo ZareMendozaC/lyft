@@ -25,6 +25,24 @@ function centrarMapa(position){
         title:"Aqui estoy!!!",
         icon: "img/persona.png"
     });
+     var marker1 = new google.maps.Marker({
+        position: new google.maps.LatLng(position.coords.latitude+0.002, position.coords.longitude),
+        map: miMapa,
+        title:"auto1",
+        icon: "img/carro.png"
+    });
+     var marker2 = new google.maps.Marker({
+        position: new google.maps.LatLng(position.coords.latitude+0.005, position.coords.longitude),
+        map: miMapa,
+        title:"auto2",
+        icon: "img/carro.png"
+    });
+      var marker3 = new google.maps.Marker({
+        position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude+0.005),
+        map: miMapa,
+        title:"auto3",
+        icon: "img/carro.png"
+    });
 };
 
 function mostrarErrores(){
