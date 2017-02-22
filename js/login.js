@@ -60,18 +60,19 @@ function getObjectLocalStorage(key) {
         return Math.random() * (max - min) + min;
 }
 
-
-    function next(){
+function next(){
         var lab= "LAB-"
         var numAle= getRandomArbitrary(100,999);
         var codeGenerado= lab+Math.floor(numAle);
-        setObjectLocalStorage('tel', document.getElementById("phone-selector").value );
+        setObjectLocalStorage('tel', $('#code-dial').val());
+        //setObjectLocalStorage('tel', document.getElementById("phone-selector").value );
         setObjectLocalStorage('codigo',codeGenerado );
 
         alert("su codigo es: "+codeGenerado);
         window.location = "datos.html";
     }
-      var buttonNext= document.getElementById("next");
+//var buttonNext= document.getElementById("next");
+       var buttonNext= $('#next');
     buttonNext.addEventListener('click', next);
 });
 
